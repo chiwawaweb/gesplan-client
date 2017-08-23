@@ -16,6 +16,8 @@ namespace gesplan_client
         public PlanningEditForm()
         {
             InitializeComponent();
+
+
         }
     }
 }
