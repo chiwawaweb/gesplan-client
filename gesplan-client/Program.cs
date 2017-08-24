@@ -16,7 +16,7 @@ namespace gesplan_client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PlanningEditForm());
+            Application.Run(new MainForm());
         }
     }
 }

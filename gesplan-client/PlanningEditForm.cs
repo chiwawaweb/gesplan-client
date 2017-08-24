@@ -14,12 +14,16 @@ namespace gesplan_client
     public partial class PlanningEditForm : Form
     {
         private DBConnect dbConnect;
+        MainForm parent;
 
         public PlanningEditForm()
         {
+            this.parent = parent;
             InitializeComponent();
 
-            dbConnect = new DBConnect();    
+            dbConnect = new DBConnect(); 
+
+            
         }
 
         private void PlanningEditForm_Load(object sender, EventArgs e)
@@ -41,9 +45,7 @@ namespace gesplan_client
             txt_nbPersonnels.Location = new Point(50, 50);
             Controls.Add(txt_nbPersonnels);
 
-            // nombre de personnels dans la base -> barre d'état
-            string tlsInfos = "Nombre de personnels dans la base : " + dbConnect.Count().ToString();
-            //tls_infos.Text = tlsInfos;
+            
 
         }
     }

@@ -84,7 +84,7 @@ namespace gesplan_client
         // sélection : les personnels
         public List<string>[] Select()
         {
-            string query = "SELECT * FROM personnels";
+            string query = "SELECT * FROM personnels WHERE ID_agence = " + numMag;
 
             // création d'une liste pour stocker le résultat
             List<string>[] list = new List<string>[3];
