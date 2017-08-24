@@ -36,7 +36,6 @@ namespace ConnectCsharpToMysql
             connection = new MySqlConnection(connectionString);
         }
 
-
         //open connection to database
         private bool OpenConnection()
         {

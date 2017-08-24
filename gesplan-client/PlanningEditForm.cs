@@ -7,17 +7,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+
 
 namespace gesplan_client
 {
     public partial class PlanningEditForm : Form
     {
+        private DBConnect dbConnect;
+
         public PlanningEditForm()
         {
             InitializeComponent();
 
+            dbConnect = new DBConnect();    
+        }
 
+        private void PlanningEditForm_Load(object sender, EventArgs e)
+        {
+            List<string>[] list;
+            list = dbConnect.Select();
+
+            dgvPersonnels.Rows.Clear();
+            for (int i=0; i<list[0].Count; i++)
+            {
+                int number = dgvPersonnels.Rows.Add();
+                dgvPersonnels.Rows[number].Cells[0].Value = list[0][i];
+                dgvPersonnels.Rows[number].Cells[1].Value = list[1][i];
+                dgvPersonnels.Rows[number].Cells[2].Value = list[2][i];
+            }
         }
     }
 }
