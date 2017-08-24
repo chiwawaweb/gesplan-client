@@ -23,7 +23,7 @@ namespace gesplan_client
         private void MainForm_Load(object sender, EventArgs e)
         {
             // ouvre le formulaire d'édition du planning
-            Connexion frmConnect = new Connexion();
+            ConnexionForm frmConnect = new ConnexionForm();
             frmConnect.ShowDialog();
             
             // nombre de personnels dans la base -> barre d'état

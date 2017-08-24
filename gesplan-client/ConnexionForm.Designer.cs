@@ -1,6 +1,6 @@
 ﻿namespace gesplan_client
 {
-    partial class Connexion
+    partial class ConnexionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,52 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_uid = new System.Windows.Forms.TextBox();
+            this.txt_password = new System.Windows.Forms.TextBox();
             this.lbl_uid = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_connexion = new System.Windows.Forms.Button();
             this.btn_quitter = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txt_uid
             // 
-            this.textBox1.Location = new System.Drawing.Point(238, 63);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 0;
+            this.txt_uid.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_uid.Location = new System.Drawing.Point(102, 15);
+            this.txt_uid.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_uid.Name = "txt_uid";
+            this.txt_uid.Size = new System.Drawing.Size(95, 20);
+            this.txt_uid.TabIndex = 0;
             // 
-            // textBox2
+            // txt_password
             // 
-            this.textBox2.Location = new System.Drawing.Point(238, 108);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(100, 26);
-            this.textBox2.TabIndex = 1;
+            this.txt_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_password.Location = new System.Drawing.Point(102, 41);
+            this.txt_password.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_password.Name = "txt_password";
+            this.txt_password.PasswordChar = '*';
+            this.txt_password.Size = new System.Drawing.Size(95, 20);
+            this.txt_password.TabIndex = 1;
             // 
             // lbl_uid
             // 
             this.lbl_uid.AutoSize = true;
-            this.lbl_uid.Location = new System.Drawing.Point(110, 68);
+            this.lbl_uid.Location = new System.Drawing.Point(21, 18);
+            this.lbl_uid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_uid.Name = "lbl_uid";
-            this.lbl_uid.Size = new System.Drawing.Size(88, 20);
+            this.lbl_uid.Size = new System.Drawing.Size(56, 13);
             this.lbl_uid.TabIndex = 2;
-            this.lbl_uid.Text = "Identifiant :";
+            this.lbl_uid.Text = "Matricule :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(110, 108);
+            this.label2.Location = new System.Drawing.Point(21, 44);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 20);
+            this.label2.Size = new System.Drawing.Size(77, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Mot de passe :";
             // 
             // btn_connexion
             // 
-            this.btn_connexion.Location = new System.Drawing.Point(324, 188);
+            this.btn_connexion.Location = new System.Drawing.Point(102, 71);
+            this.btn_connexion.Margin = new System.Windows.Forms.Padding(2);
             this.btn_connexion.Name = "btn_connexion";
-            this.btn_connexion.Size = new System.Drawing.Size(100, 44);
+            this.btn_connexion.Size = new System.Drawing.Size(95, 29);
             this.btn_connexion.TabIndex = 2;
             this.btn_connexion.Text = "Connexion";
             this.btn_connexion.UseVisualStyleBackColor = true;
@@ -82,33 +89,35 @@
             // btn_quitter
             // 
             this.btn_quitter.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_quitter.Location = new System.Drawing.Point(238, 188);
+            this.btn_quitter.Location = new System.Drawing.Point(24, 71);
+            this.btn_quitter.Margin = new System.Windows.Forms.Padding(2);
             this.btn_quitter.Name = "btn_quitter";
-            this.btn_quitter.Size = new System.Drawing.Size(75, 44);
+            this.btn_quitter.Size = new System.Drawing.Size(74, 29);
             this.btn_quitter.TabIndex = 5;
             this.btn_quitter.TabStop = false;
-            this.btn_quitter.Text = "Quitter";
+            this.btn_quitter.Text = "Annuler";
             this.btn_quitter.UseVisualStyleBackColor = true;
             this.btn_quitter.Click += new System.EventHandler(this.btn_quitter_Click);
             // 
-            // Connexion
+            // ConnexionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AcceptButton = this.btn_connexion;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btn_quitter;
-            this.ClientSize = new System.Drawing.Size(470, 269);
+            this.ClientSize = new System.Drawing.Size(228, 114);
             this.ControlBox = false;
             this.Controls.Add(this.btn_quitter);
             this.Controls.Add(this.btn_connexion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbl_uid);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_password);
+            this.Controls.Add(this.txt_uid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Connexion";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "ConnexionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Connexion";
-            this.Load += new System.EventHandler(this.Connexion_Load);
+            this.Text = "Entrez vos identifiants";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,8 +125,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_uid;
+        private System.Windows.Forms.TextBox txt_password;
         private System.Windows.Forms.Label lbl_uid;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_connexion;

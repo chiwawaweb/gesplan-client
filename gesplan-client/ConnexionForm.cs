@@ -10,11 +10,14 @@ using System.Windows.Forms;
 
 namespace gesplan_client
 {
-    public partial class Connexion : Form
+    public partial class ConnexionForm : Form
     {
-        public Connexion()
+        private UserConnect userConnect;
+
+        public ConnexionForm()
         {
             InitializeComponent();
+            userConnect = new UserConnect();
         }
 
         private void btn_quitter_Click(object sender, EventArgs e)
@@ -22,14 +25,18 @@ namespace gesplan_client
             Application.Exit();
         }
 
-        private void Connexion_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_connexion_Click(object sender, EventArgs e)
         {
-            
+            if (userConnect.Connect(txt_uid.Text, txt_password.Text) == true)
+            {
+                MessageBox.Show("authentification ok");
+            }
+            else
+            {
+                MessageBox.Show("authentification en erreur !");
+                txt_password.Text = "";
+                txt_password.Focus();
+            }
         }
     }
 }

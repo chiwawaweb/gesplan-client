@@ -12,7 +12,7 @@ namespace gesplan_client
 {
     class DBConnect
     {
-        private MySqlConnection connection;
+        protected MySqlConnection connection;
         private string server;
         private string database;
         private string uid;
@@ -26,7 +26,7 @@ namespace gesplan_client
         }
 
         // initialisation des valeurs
-        private void Initialize()
+        public void Initialize()
         {
             numMag = 1;
             server = "chiwawaweb.com";
@@ -43,7 +43,7 @@ namespace gesplan_client
         }
 
         // ouvre la connexion à la base
-        private bool OpenConnection()
+        protected bool OpenConnection()
         {
             try
             {
@@ -67,7 +67,7 @@ namespace gesplan_client
         }
 
         // ferme la connexion
-        private bool CloseConnection()
+        protected bool CloseConnection()
         {
             try
             {
@@ -81,6 +81,8 @@ namespace gesplan_client
             }
         }
 
+        
+
         // sélection : les personnels
         public List<string>[] Select()
         {
@@ -93,7 +95,7 @@ namespace gesplan_client
             list[2] = new List<string>();
 
             // ouvre la connexion
-            if (this.OpenConnection() == true)
+            if (OpenConnection() == true)
             {
                 // crée la commande
                 MySqlCommand cmd = new MySqlCommand(query, connection);
@@ -112,7 +114,7 @@ namespace gesplan_client
                 dataReader.Close();
 
                 // close Connection
-                this.CloseConnection();
+                CloseConnection();
 
                 // retourne la liste à afficher
                 return list;

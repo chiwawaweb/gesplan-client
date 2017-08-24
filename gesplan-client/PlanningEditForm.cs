@@ -22,8 +22,6 @@ namespace gesplan_client
             InitializeComponent();
 
             dbConnect = new DBConnect(); 
-
-            
         }
 
         private void PlanningEditForm_Load(object sender, EventArgs e)
