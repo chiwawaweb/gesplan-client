@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,13 +28,19 @@ namespace gesplan_client
 
         private void btn_connexion_Click(object sender, EventArgs e)
         {
+            // vérifie que les champs ne soient pas vides
+            if (txt_uid.Text=="" || txt_password.Text=="")
+            {
+                // erreur de saisie
+            }
+
             if (userConnect.Connect(txt_uid.Text, txt_password.Text) == true)
             {
-                MessageBox.Show("authentification ok");
+                MessageBox.Show("User connecté");
             }
             else
             {
-                MessageBox.Show("authentification en erreur !");
+                MessageBox.Show("User non reconnu");
                 txt_password.Text = "";
                 txt_password.Focus();
             }

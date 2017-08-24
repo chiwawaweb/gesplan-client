@@ -4,18 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Security.Cryptography;
 
 namespace gesplan_client
 {
     partial class UserConnect : DBConnect
     {
-
-        
         // connexion d'un personnel
         public bool Connect(string uid, string password)
         {
+            // transforme le password en MD5
+            byte[] asciiBytes = Encoding.ASCII.GetBytes(password);
+            byte[] hashedBytes = MD5.Create().ComputeHash(asciiBytes);
+            string md5Password = BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+
             string query = "SELECT Count(*) FROM personnels WHERE login LIKE '" + uid 
-                + "' AND password LIKE '" + password + "'";
+                + "' AND password LIKE '" + md5Password + "'";
             int Count = -1;
             
             // ouvre la connexion
@@ -37,8 +41,6 @@ namespace gesplan_client
             {
                 return false;
             }
-
-            
         }
     }
 }
