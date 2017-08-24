@@ -17,6 +17,7 @@ namespace gesplan_client
         private string database;
         private string uid;
         private string password;
+        private int numMag; // numéro du magasin par défaut
 
         // constructeur
         public DBConnect()
@@ -27,10 +28,11 @@ namespace gesplan_client
         // initialisation des valeurs
         private void Initialize()
         {
+            numMag = 1;
             server = "chiwawaweb.com";
             database = "gesplan";
             uid = "gesplan";
-            password = "a77q3az9";
+            password = "a77q3az9"; // à modifier
             string connectionString;
             connectionString = "SERVER=" + server 
                 + ";" + "DATABASE=" + database 

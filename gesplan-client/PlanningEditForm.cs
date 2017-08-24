@@ -35,6 +35,16 @@ namespace gesplan_client
                 dgvPersonnels.Rows[number].Cells[1].Value = list[1][i];
                 dgvPersonnels.Rows[number].Cells[2].Value = list[2][i];
             }
+
+            // création du formulaire à la volée
+            TextBox txt_nbPersonnels = new TextBox();
+            txt_nbPersonnels.Location = new Point(50, 50);
+            Controls.Add(txt_nbPersonnels);
+
+            // nombre de personnels dans la base -> barre d'état
+            string tlsInfos = "Nombre de personnels dans la base : " + dbConnect.Count().ToString();
+            //tls_infos.Text = tlsInfos;
+
         }
     }
 }
