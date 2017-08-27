@@ -36,7 +36,7 @@ namespace gesplan_client
 
             if (userConnect.Connect(txt_uid.Text, txt_password.Text) == true)
             {
-                MessageBox.Show("User connecté");
+                this.Close();
             }
             else
             {
