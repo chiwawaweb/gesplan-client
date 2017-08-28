@@ -32,18 +32,22 @@ namespace gesplan_client
             if (txt_uid.Text=="" || txt_password.Text=="")
             {
                 // erreur de saisie
-            }
-
-            if (userConnect.Connect(txt_uid.Text, txt_password.Text) == true)
-            {
-                this.Close();
+                MessageBox.Show("Le matricule ou le mot de passe ne peuvent pas être vide.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("User non reconnu");
-                txt_password.Text = "";
-                txt_password.Focus();
+                if (userConnect.Connect(txt_uid.Text, txt_password.Text) == true)
+                {
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Le matricule ou le mot de passe sont incorrects.", "Connexion refusée", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_password.Text = "";
+                    txt_password.Focus();
+                }
             }
+            
         }
     }
 }
