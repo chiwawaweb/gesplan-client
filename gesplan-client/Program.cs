@@ -8,6 +8,7 @@ namespace gesplan_client
 {
     static class Program
     {
+        public static int levelAuth = 9;
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
@@ -16,7 +17,7 @@ namespace gesplan_client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new MainForm(levelAuth));
         }
     }
 }

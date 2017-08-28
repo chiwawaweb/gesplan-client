@@ -14,7 +14,7 @@ namespace gesplan_client
     public partial class ConnexionForm : Form
     {
         private UserConnect userConnect;
-
+        
         public ConnexionForm()
         {
             InitializeComponent();
@@ -39,6 +39,8 @@ namespace gesplan_client
                 if (userConnect.Connect(txt_uid.Text, txt_password.Text) == true)
                 {
                     this.Close();
+                    MainForm mainForm = new MainForm(2);
+                    mainForm.Activate();
                 }
                 else
                 {

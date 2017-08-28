@@ -16,7 +16,7 @@ namespace gesplan_client
 
         public int level_auth;
 
-        public MainForm(int level = 1)
+        public MainForm(int level)
         {
             InitializeComponent();
             dbConnect = new DBConnect();
@@ -29,7 +29,8 @@ namespace gesplan_client
             ConnexionForm frmConnect = new ConnexionForm();
             frmConnect.ShowDialog();
 
-            menuStrip.Enabled = true;
+            menuStrip.Visible = true;
+            statusStrip.Visible = true;
 
             // nombre de personnels dans la base -> barre d'état
             string tlsInfos = "Nombre de personnels dans la base : " + dbConnect.Count().ToString();
