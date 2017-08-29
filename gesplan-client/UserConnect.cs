@@ -62,7 +62,38 @@ namespace gesplan_client
                 // rang non trouvé, problème !
                 return -2;
             }
+        }
 
+        // nom et prenom de l'utilisateur
+        public string UserName(int userID)
+        {
+            string query = "SELECT * FROM personnels WHERE ID = " + userID;
+            string userName = "";
+
+            // ouvre la connexion
+            if (OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    userName = dataReader["prenom"] + " " + dataReader["nom"] + "";
+                }
+
+                dataReader.Close();
+                CloseConnection();
+
+                // retourne le nom et prenom de l'utilisateur de l'utilisateur
+                return userName;
+            }
+            else
+            {
+                // non trouvé, à gérer !!
+                return "###";
+            }
+
+            
         }
     }
 }

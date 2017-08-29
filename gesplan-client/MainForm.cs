@@ -13,6 +13,7 @@ namespace gesplan_client
     public partial class MainForm : Form
     {
         private DBConnect dbConnect;
+        private UserConnect userConnect;
 
         private static int userID;
 
@@ -20,6 +21,7 @@ namespace gesplan_client
         {
             InitializeComponent();
             dbConnect = new DBConnect();
+            userConnect = new UserConnect();
             userID = u;
         }
 
@@ -34,7 +36,7 @@ namespace gesplan_client
 
             // nombre de personnels dans la base -> barre d'état
             string tlsInfos = "Nombre de personnels dans la base : " + dbConnect.Count().ToString();
-            tlsInfos += " | User ID : #" + userID.ToString();
+            tlsInfos += " | Utilisateur connecté : " + userConnect.UserName(userID);
             tls_infos.Text = tlsInfos;
 
             // affiche ID du user
