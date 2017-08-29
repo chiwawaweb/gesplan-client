@@ -13,6 +13,7 @@ namespace gesplan_client
     public partial class MainForm : Form
     {
         private DBConnect dbConnect;
+        private UserInfosConnect userInfosConnect;
 
         public int level_auth;
 
@@ -20,7 +21,10 @@ namespace gesplan_client
         {
             InitializeComponent();
             dbConnect = new DBConnect();
+            userInfosConnect = new UserInfosConnect();
             level_auth = level;
+            MessageBox.Show(userInfosConnect.UserLevel(1).ToString());
+            
         }
 
         private void MainForm_Load(object sender, EventArgs e)
