@@ -13,7 +13,7 @@ namespace gesplan_client
     public partial class MainForm : Form
     {
         private DBConnect dbConnect;
-        private UserInfosConnect userInfosConnect;
+        private UserConnect userConnect;
 
         public int level_auth;
 
@@ -21,10 +21,8 @@ namespace gesplan_client
         {
             InitializeComponent();
             dbConnect = new DBConnect();
-            userInfosConnect = new UserInfosConnect();
+            userConnect = new UserConnect();
             level_auth = level;
-            MessageBox.Show(userInfosConnect.UserLevel(1).ToString());
-            
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -36,10 +34,15 @@ namespace gesplan_client
             menuStrip.Visible = true;
             statusStrip.Visible = true;
 
+            level_auth = userConnect.UserLevel(1); // a compléter par userID
+
             // nombre de personnels dans la base -> barre d'état
             string tlsInfos = "Nombre de personnels dans la base : " + dbConnect.Count().ToString();
             tlsInfos += " | Auth. Level : " + level_auth;
             tls_infos.Text = tlsInfos;
+
+            // affiche ID du user
+            
         }
 
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)

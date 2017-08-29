@@ -36,11 +36,12 @@ namespace gesplan_client
             }
             else
             {
-                if (userConnect.Connect(txt_uid.Text, txt_password.Text) == true)
+                if (userConnect.Connect(txt_uid.Text, txt_password.Text) > 0)
                 {
                     this.Close();
                     MainForm mainForm = new MainForm(2);
                     mainForm.Activate();
+                    MessageBox.Show("toto " + userConnect.Connect(txt_uid.Text, txt_password.Text));
                 }
                 else
                 {
