@@ -40,7 +40,7 @@ namespace gesplan_client
             if (txt_uid.Text=="" || txt_password.Text=="")
             {
                 // erreur de saisie
-                MessageBox.Show("Le matricule ou le mot de passe ne peuvent pas être vide.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Le matricule ou le mot de passe ne peuvent pas être vides.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -49,7 +49,6 @@ namespace gesplan_client
                     this.Close();
                     MainForm mainForm = new MainForm(userID);
                     mainForm.Activate();
-                    MessageBox.Show("ID #" + userID);
                 }
                 else
                 {

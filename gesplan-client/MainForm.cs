@@ -14,15 +14,13 @@ namespace gesplan_client
     {
         private DBConnect dbConnect;
 
-        private int _userID;
+        private static int userID;
 
-        public MainForm(int userID)
+        public MainForm(int u)
         {
-            this._userID = userID;
             InitializeComponent();
             dbConnect = new DBConnect();
-            
-            
+            userID = u;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -34,12 +32,9 @@ namespace gesplan_client
             menuStrip.Visible = true;
             statusStrip.Visible = true;
 
-            // où est le _userID ????
-            MessageBox.Show("userID : "+_userID.ToString());
-
             // nombre de personnels dans la base -> barre d'état
             string tlsInfos = "Nombre de personnels dans la base : " + dbConnect.Count().ToString();
-            tlsInfos += " | User ID : " + _userID.ToString();
+            tlsInfos += " | User ID : #" + userID.ToString();
             tls_infos.Text = tlsInfos;
 
             // affiche ID du user
