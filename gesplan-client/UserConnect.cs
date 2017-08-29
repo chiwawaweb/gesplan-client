@@ -30,13 +30,8 @@ namespace gesplan_client
                 }
                 dataReader.Close();
                 CloseConnection();
-                
-                return userID;
             }
-            else
-            {
-                return -1;
-            }
+            return userID;
         }
 
         // rang de l'utilisateur

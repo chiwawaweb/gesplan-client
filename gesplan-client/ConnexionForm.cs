@@ -21,6 +21,12 @@ namespace gesplan_client
             userConnect = new UserConnect();
         }
 
+        private void connectUser()
+        {
+            // contenu du click bouton connexion
+
+        }
+
         private void btn_quitter_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -28,6 +34,8 @@ namespace gesplan_client
 
         private void btn_connexion_Click(object sender, EventArgs e)
         {
+            int userID = userConnect.Connect(txt_uid.Text, txt_password.Text);
+
             // vérifie que les champs ne soient pas vides
             if (txt_uid.Text=="" || txt_password.Text=="")
             {
@@ -36,12 +44,12 @@ namespace gesplan_client
             }
             else
             {
-                if (userConnect.Connect(txt_uid.Text, txt_password.Text) > 0)
+                if (userID > 0)
                 {
                     this.Close();
-                    MainForm mainForm = new MainForm(2);
+                    MainForm mainForm = new MainForm(userID);
                     mainForm.Activate();
-                    MessageBox.Show("toto " + userConnect.Connect(txt_uid.Text, txt_password.Text));
+                    MessageBox.Show("ID #" + userID);
                 }
                 else
                 {

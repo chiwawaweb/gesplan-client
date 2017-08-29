@@ -8,7 +8,7 @@ namespace gesplan_client
 {
     static class Program
     {
-        public static int levelAuth = 9999;
+        public static int levelAuth;
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
