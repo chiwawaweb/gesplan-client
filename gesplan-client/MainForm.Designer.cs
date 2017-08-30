@@ -1,4 +1,4 @@
-﻿namespace gesplan_client
+﻿namespace visucal_client
 {
     partial class MainForm
     {
@@ -28,10 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.connexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.déconnexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.planningToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consulterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miseÀJourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.tls_infos = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip.SuspendLayout();
@@ -43,6 +55,7 @@
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierToolStripMenuItem,
+            this.planningToolStripMenuItem,
             this.toolStripMenuItem1});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
@@ -55,23 +68,106 @@
             // fichierToolStripMenuItem
             // 
             this.fichierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.connexionToolStripMenuItem,
+            this.déconnexionToolStripMenuItem,
+            this.imprimerToolStripMenuItem,
+            this.toolStripMenuItem3,
             this.quitterToolStripMenuItem});
             this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
             this.fichierToolStripMenuItem.Size = new System.Drawing.Size(74, 29);
             this.fichierToolStripMenuItem.Text = "Fichier";
             // 
+            // connexionToolStripMenuItem
+            // 
+            this.connexionToolStripMenuItem.Enabled = false;
+            this.connexionToolStripMenuItem.Name = "connexionToolStripMenuItem";
+            this.connexionToolStripMenuItem.Size = new System.Drawing.Size(199, 30);
+            this.connexionToolStripMenuItem.Text = "Connexion";
+            // 
+            // déconnexionToolStripMenuItem
+            // 
+            this.déconnexionToolStripMenuItem.Name = "déconnexionToolStripMenuItem";
+            this.déconnexionToolStripMenuItem.Size = new System.Drawing.Size(199, 30);
+            this.déconnexionToolStripMenuItem.Text = "Déconnexion";
+            // 
+            // imprimerToolStripMenuItem
+            // 
+            this.imprimerToolStripMenuItem.Enabled = false;
+            this.imprimerToolStripMenuItem.Name = "imprimerToolStripMenuItem";
+            this.imprimerToolStripMenuItem.Size = new System.Drawing.Size(199, 30);
+            this.imprimerToolStripMenuItem.Text = "Imprimer...";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(196, 6);
+            // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(151, 30);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(199, 30);
             this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
+            // planningToolStripMenuItem
+            // 
+            this.planningToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.consulterToolStripMenuItem,
+            this.modifierToolStripMenuItem});
+            this.planningToolStripMenuItem.Name = "planningToolStripMenuItem";
+            this.planningToolStripMenuItem.Size = new System.Drawing.Size(92, 29);
+            this.planningToolStripMenuItem.Text = "Planning";
+            // 
+            // consulterToolStripMenuItem
+            // 
+            this.consulterToolStripMenuItem.Enabled = false;
+            this.consulterToolStripMenuItem.Name = "consulterToolStripMenuItem";
+            this.consulterToolStripMenuItem.Size = new System.Drawing.Size(171, 30);
+            this.consulterToolStripMenuItem.Text = "Consulter";
+            // 
+            // modifierToolStripMenuItem
+            // 
+            this.modifierToolStripMenuItem.Enabled = false;
+            this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(171, 30);
+            this.modifierToolStripMenuItem.Text = "Modifier";
+            // 
             // toolStripMenuItem1
             // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aideToolStripMenuItem,
+            this.miseÀJourToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.aProposToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(32, 29);
             this.toolStripMenuItem1.Text = "?";
+            // 
+            // aideToolStripMenuItem
+            // 
+            this.aideToolStripMenuItem.Enabled = false;
+            this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
+            this.aideToolStripMenuItem.Size = new System.Drawing.Size(195, 30);
+            this.aideToolStripMenuItem.Text = "Aide ?";
+            // 
+            // miseÀJourToolStripMenuItem
+            // 
+            this.miseÀJourToolStripMenuItem.Enabled = false;
+            this.miseÀJourToolStripMenuItem.Name = "miseÀJourToolStripMenuItem";
+            this.miseÀJourToolStripMenuItem.Size = new System.Drawing.Size(195, 30);
+            this.miseÀJourToolStripMenuItem.Text = "Mise à jour...";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(192, 6);
+            // 
+            // aProposToolStripMenuItem
+            // 
+            this.aProposToolStripMenuItem.Enabled = false;
+            this.aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
+            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(195, 30);
+            this.aProposToolStripMenuItem.Text = "A propos...";
             // 
             // statusStrip
             // 
@@ -95,14 +191,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1284, 835);
-            this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
+            this.Controls.Add(this.statusStrip);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "GesPlan";
+            this.Text = "VisuCal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip.ResumeLayout(false);
@@ -122,5 +219,16 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         public System.Windows.Forms.ToolStripStatusLabel tls_infos;
         private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem planningToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consulterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modifierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aideToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miseÀJourToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem aProposToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem connexionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem déconnexionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem imprimerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace gesplan_client
+namespace visucal_client
 {
     partial class UserConnect : DBConnect
     {
@@ -38,7 +38,7 @@ namespace gesplan_client
         // rang de l'utilisateur
         public int UserLevel(int userID)
         {
-            string query = "SELECT * FROM personnels WHERE ID = " + userID;
+            string query = "SELECT * FROM personnels WHERE actif LIKE 'Y' AND ID = " + userID;
 
             // ouvre la connexion
             if (OpenConnection() == true)
@@ -68,7 +68,7 @@ namespace gesplan_client
         // nom et prenom de l'utilisateur
         public string UserName(int userID)
         {
-            string query = "SELECT * FROM personnels WHERE ID = " + userID;
+            string query = "SELECT * FROM personnels WHERE actif LIKE 'Y' AND ID = " + userID;
             string userName = "";
 
             // ouvre la connexion
@@ -96,12 +96,11 @@ namespace gesplan_client
 
         }
          
-        // trouve les droits de l'utilisateur
+        // droits de l'utilisateur
         public List<string>[] UserDroits(int userID)
         {
             string query = "SELECT * FROM personnels_droits WHERE ID_personnel = " + userID;
 
-            // création d'une liste pour stocker le résultat
             List<string>[] droits = new List<string>[1];
             droits[0] = new List<string>();
 
@@ -130,5 +129,14 @@ namespace gesplan_client
                 return droits;
             }
         }
+
+        // site par défaut de l'utilisateur
+        public int UserSite(int userID)
+        {
+            string query = "SELECT * FROM personnels WHERE actif LIKE 'Y' AND ID_personnel = " + userID;
+
+            return 0;
+        }
+
     }
 }

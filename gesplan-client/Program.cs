@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace gesplan_client
+namespace visucal_client
 {
     static class Program
     {

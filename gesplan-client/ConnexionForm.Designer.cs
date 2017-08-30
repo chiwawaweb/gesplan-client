@@ -1,4 +1,4 @@
-﻿namespace gesplan_client
+﻿namespace visucal_client
 {
     partial class ConnexionForm
     {
@@ -101,7 +101,7 @@
             // 
             // pcb_logo
             // 
-            this.pcb_logo.Image = global::gesplan_client.Properties.Resources.logo;
+            this.pcb_logo.Image = global::visucal_client.Properties.Resources.logo;
             this.pcb_logo.Location = new System.Drawing.Point(0, 0);
             this.pcb_logo.Margin = new System.Windows.Forms.Padding(0);
             this.pcb_logo.Name = "pcb_logo";

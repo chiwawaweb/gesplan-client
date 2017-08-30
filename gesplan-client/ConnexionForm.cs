@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace gesplan_client
+namespace visucal_client
 {
     public partial class ConnexionForm : Form
     {

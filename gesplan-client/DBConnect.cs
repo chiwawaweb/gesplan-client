@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.IO;
 using MySql.Data.MySqlClient;
 
-namespace gesplan_client
+namespace visucal_client
 {
     class DBConnect
     {

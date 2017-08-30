@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace gesplan_client
+namespace visucal_client
 {
     public partial class MainForm : Form
     {
@@ -34,28 +34,34 @@ namespace gesplan_client
             menuStrip.Visible = true;
             statusStrip.Visible = true;
 
-
-
             // liste des droits de l'utilisateur
             List<string>[] droits;
             droits = userConnect.UserDroits(userID);
 
             string mesDroits = "";
-            for (int i =0;i<droits[0].Count; i++)
+            for (int i = 0;i < droits[0].Count; i++)
             {
-                mesDroits += "("+droits[0][i]+")";
+                switch (droits[0][i])
+                {
+                    case "1":
+                        consulterToolStripMenuItem.Enabled = true;
+                        break;
+
+                    case "2":
+                        modifierToolStripMenuItem.Enabled = true;
+                        break;
+                }
+                
+                // temporaire
+                mesDroits += droits[0][i] + " ";
             }
-
-            MessageBox.Show(mesDroits);
-
 
             // infos diverses dans la barre d'état
             string tlsInfos = "Nombre de personnels dans la base : " + dbConnect.Count().ToString();
-            tlsInfos += " | Utilisateur connecté : " + userConnect.UserName(userID);
+            tlsInfos += " | Utilisateur connecté : " + userConnect.UserName(userID) + " (#" + userID.ToString() + ")";
+            tlsInfos += " | Droits : " + mesDroits;
+            tlsInfos += " | Agence par défaut : ";
             tls_infos.Text = tlsInfos;
-
-            
-            
         }
 
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)

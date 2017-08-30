@@ -1,4 +1,4 @@
-﻿namespace gesplan_client
+﻿namespace visucal_client
 {
     partial class PlanningEditForm
     {
