@@ -133,9 +133,34 @@ namespace visucal_client
         // site par défaut de l'utilisateur
         public int UserSite(int userID)
         {
-            string query = "SELECT * FROM personnels WHERE actif LIKE 'Y' AND ID_personnel = " + userID;
+            string query = "SELECT * FROM personnels WHERE actif LIKE 'Y' AND ID = " + userID;
 
-            return 0;
+            int site = 0;
+
+            // ouvre la connexion
+            if (OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    site = int.Parse(dataReader["ID_agence"] + "");
+                }
+
+                // ferme le data reader
+                dataReader.Close();
+
+                // close Connection
+                CloseConnection();
+
+                // retourne les droits de l'utilisateur
+                return site;
+            }
+            else
+            {
+                return site;
+            }
         }
 
     }

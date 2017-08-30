@@ -60,8 +60,11 @@ namespace visucal_client
             string tlsInfos = "Nombre de personnels dans la base : " + dbConnect.Count().ToString();
             tlsInfos += " | Utilisateur connecté : " + userConnect.UserName(userID) + " (#" + userID.ToString() + ")";
             tlsInfos += " | Droits : " + mesDroits;
-            tlsInfos += " | Agence par défaut : ";
+            tlsInfos += " | ID Agence par défaut : " + userConnect.UserSite(userID);
             tls_infos.Text = tlsInfos;
+
+            // barre de l'application
+            Text = "VisuCal - [" + userConnect.UserName(userID) + "]";
         }
 
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
