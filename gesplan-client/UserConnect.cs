@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -93,7 +94,41 @@ namespace gesplan_client
                 return "###";
             }
 
-            
+        }
+         
+        // trouve les droits de l'utilisateur
+        public List<string>[] UserDroits(int userID)
+        {
+            string query = "SELECT * FROM personnels_droits WHERE ID_personnel = " + userID;
+
+            // création d'une liste pour stocker le résultat
+            List<string>[] droits = new List<string>[1];
+            droits[0] = new List<string>();
+
+            // ouvre la connexion
+            if (OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    droits[0].Add(dataReader["ID_droit"] + "");
+                }
+
+                // ferme le data reader
+                dataReader.Close();
+
+                // close Connection
+                CloseConnection();
+
+                // retourne les droits de l'utilisateur
+                return droits;
+            }
+            else
+            {
+                return droits;
+            }
         }
     }
 }

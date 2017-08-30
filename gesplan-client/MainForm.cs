@@ -34,12 +34,27 @@ namespace gesplan_client
             menuStrip.Visible = true;
             statusStrip.Visible = true;
 
-            // nombre de personnels dans la base -> barre d'état
+
+
+            // liste des droits de l'utilisateur
+            List<string>[] droits;
+            droits = userConnect.UserDroits(userID);
+
+            string mesDroits = "";
+            for (int i =0;i<droits[0].Count; i++)
+            {
+                mesDroits += "("+droits[0][i]+")";
+            }
+
+            MessageBox.Show(mesDroits);
+
+
+            // infos diverses dans la barre d'état
             string tlsInfos = "Nombre de personnels dans la base : " + dbConnect.Count().ToString();
             tlsInfos += " | Utilisateur connecté : " + userConnect.UserName(userID);
             tls_infos.Text = tlsInfos;
 
-            // affiche ID du user
+            
             
         }
 
