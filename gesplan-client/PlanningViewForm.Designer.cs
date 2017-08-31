@@ -35,20 +35,22 @@
             // 
             this.lbl_titre.AutoSize = true;
             this.lbl_titre.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_titre.Location = new System.Drawing.Point(421, 27);
+            this.lbl_titre.Location = new System.Drawing.Point(281, 18);
+            this.lbl_titre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_titre.Name = "lbl_titre";
-            this.lbl_titre.Size = new System.Drawing.Size(151, 37);
+            this.lbl_titre.Size = new System.Drawing.Size(101, 26);
             this.lbl_titre.TabIndex = 0;
             this.lbl_titre.Text = "Planning";
             // 
             // PlanningViewForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1353, 866);
+            this.ClientSize = new System.Drawing.Size(856, 563);
             this.ControlBox = false;
             this.Controls.Add(this.lbl_titre);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PlanningViewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Planning";
