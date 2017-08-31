@@ -65,7 +65,13 @@ namespace visucal_client
 
             // barre de l'application
             Text = "VisuCal - [" + userConnect.UserName(userID) + "]";
-        }
+
+            // ouvre le planning en mode consultation
+            PlanningViewForm pef = new PlanningViewForm(userConnect.UserSite(userID));
+            pef.MdiParent = this;
+            pef.Show();
+
+        } 
 
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
